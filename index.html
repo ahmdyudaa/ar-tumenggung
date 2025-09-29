@@ -13,6 +13,12 @@
       device-orientation-permission-ui="enabled: false"
     >
       <a-assets>
+        <!-- full -->
+        <img id="materi-tumenggung-kiri-atas" src="assets/objects/materi-tumenggung-kiri-atas.webp" />
+        <img id="materi-tumenggung-kiri-bawah" src="assets/objects/materi-tumenggung-kiri-bawah.webp" />
+        <img id="materi-tumenggung-kanan-atas" src="assets/objects/materi-tumenggung-kanan-atas.webp" />
+        <img id="materi-tumenggung-kanan-bawah" src="assets/objects/materi-tumenggung-kanan-bawah.webp" />
+
         <!-- kepala -->
         <img id="materi-kepala-1" src="assets/objects/materi-kepala-1.webp" />
         <img id="materi-kepala-2" src="assets/objects/materi-kepala-2.webp" />
@@ -29,7 +35,10 @@
         <img id="tempat-kaki" src="assets/objects/tempat-kaki.webp" />
 
         <!-- model 3D -->
-        <a-asset-item id="avatarModel" src="assets/objects/tumenggung.glb"></a-asset-item>
+        <a-asset-item id="tumenggung-fullbody" src="assets/objects/tumenggung-fullbody.glb"></a-asset-item>
+        <a-asset-item id="tumenggung-badan" src="assets/objects/tumenggung-badan.glb"></a-asset-item>
+        <a-asset-item id="tumenggung-kaki" src="assets/objects/tumenggung-kaki.glb"></a-asset-item>
+        <a-asset-item id="tumenggung-kepala" src="assets/objects/tumenggung-kepala.glb"></a-asset-item>
       </a-assets>
 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
@@ -41,10 +50,10 @@
         <a-plane src="#tempat-kepala" position="-0.9 0 0" height="1" width="1" rotation="90 -90 -90"></a-plane>
 
         <a-gltf-model 
-          src="#avatarModel" 
-          rotation="0 -90 -90" 
+          src="#tumenggung-kepala" 
+          rotation="90 -90 -90" 
           position="0 0 0.1" 
-          scale="1 1 1"
+          scale="0.8 0.8 0.8"
           animation__float="property: position; to: 0 0 0.2; dur: 1000; loop: true; dir: alternate; easing: easeInOutQuad">
         </a-gltf-model>
       </a-entity>
@@ -56,8 +65,8 @@
         <a-plane src="#tempat-badan" position="-0.9 0 0" height="1" width="1" rotation="90 -90 -90"></a-plane>
 
         <a-gltf-model 
-          src="#avatarModel" 
-          rotation="0 -90 -90" 
+          src="#tumenggung-badan" 
+          rotation="90 -90 -90" 
           position="0 0 0.1" 
           scale="1 1 1"
           animation__float="property: position; to: 0 0 0.2; dur: 1000; loop: true; dir: alternate; easing: easeInOutQuad">
@@ -71,8 +80,25 @@
         <a-plane src="#tempat-kaki" position="-0.9 0 0" height="1" width="1" rotation="90 -90 -90"></a-plane>
 
         <a-gltf-model 
-          src="#avatarModel" 
-          rotation="0 -90 -90" 
+          src="#tumenggung-kaki" 
+          rotation="90 -90 -90" 
+          position="0 0 0.1" 
+          scale="1 1 1"
+          animation__float="property: position; to: 0 0 0.2; dur: 1000; loop: true; dir: alternate; easing: easeInOutQuad">
+        </a-gltf-model>
+      </a-entity>
+      
+      <!-- 🎯 marker full (targetIndex: 3) -->
+      <a-entity mindar-image-target="targetIndex: 3">
+        <a-plane src="#materi-tumenggung-kiri-atas" position="-0.9 0 0.5" height="0.552" width="1" rotation="90 -90 -90"></a-plane>
+        <a-plane src="#materi-tumenggung-kiri-bawah" position="-0.9 0 -0.1" height="0.552" width="1" rotation="90 -90 -90"></a-plane>
+        <a-plane src="#materi-tumenggung-kanan-atas" position="0.9 0 0.5" height="0.552" width="1" rotation="90 -90 -90"></a-plane>
+        <a-plane src="#materi-tumenggung-kanan-bawah" position="0.9 0 -0.1" height="0.552" width="1" rotation="90 -90 -90"></a-plane>
+        
+
+        <a-gltf-model 
+          src="#tumenggung-fullbody" 
+          rotation="90 -90 -90" 
           position="0 0 0.1" 
           scale="1 1 1"
           animation__float="property: position; to: 0 0 0.2; dur: 1000; loop: true; dir: alternate; easing: easeInOutQuad">
